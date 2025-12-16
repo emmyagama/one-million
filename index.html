@@ -127,36 +127,49 @@
         .cta-btn.accent { background: var(--accent); color: #000; }
         .cta-sub { display: block; font-size: 1rem; margin-top: 10px; font-weight: 500; }
         .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            background: var(--primary);
-            color: #fff;
-            padding: 12px 20px; /* Slightly reduced padding for smaller button */
-            font-weight: 700;
-            text-align: center;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .sticky-cta span.cta-sub {
-            font-size: 1rem; /* Keeps subtext size as is */
-            font-weight: 500;
-            margin-top: 4px;
-        }
-        .sticky-cta .main-cta-text {
-            font-size: 1.45rem; /* Even more control over main text size */
-            font-weight: 800;
-        }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 20px; /* Reduced for subtler size */
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 -8px 20px rgba(0,0,0,0.2); /* Softer shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 12px; /* Rounded top for premium feel */
+    border-top-right-radius: 12px;
+    opacity: 0.95; /* Subtle transparency to blend */
+    transition: opacity 0.3s ease; /* Fade in/out on hover/focus */
+}
 
-/* Specifically increase only the main text size */
-.sticky-cta {
-    font-size: 1.35rem; /* Larger "Count Me In" */
+.sticky-cta:hover {
+    opacity: 1;
+}
+
+.sticky-cta .main-cta-text {
+    font-size: 1.3rem; /* Slightly larger for emphasis */
+}
+
+.sticky-cta .cta-sub {
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .sticky-cta {
+        padding: 8px 15px; /* Even smaller on mobile */
+        font-size: 1.05rem; /* Adjust base for centering */
+    }
+    .sticky-cta .main-cta-text {
+        font-size: 1.2rem;
+    }
 }
         .note-box {
             background: #fffdf0;
@@ -239,9 +252,9 @@
 <body>
     <!-- Sticky Floating CTA -->
     <a href="https://selar.co/18981179h9?ref=landing" class="sticky-cta">
-        <span class="main-cta-text">Count Me In</span>
-        <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
-    </a>
+    <span class="main-cta-text">Ready for Your ₦1M Breakthrough?</span>
+    <span class="cta-sub">Pay ₦5,000 & Secure Spot Now →</span>
+</a>
 
     <!-- Hero Section with Fade to White + Black Text -->
     <section class="hero-section">
