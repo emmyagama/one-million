@@ -58,38 +58,38 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         .hero-section {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 80px;
-            background: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+    background: #fff;
         }
         .hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
+    width: 100%;
+    height: auto;
+    display: block;
         }
         .hero-fade {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
-            pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Strong fade on bottom half */
+    background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+    pointer-events: none;
         }
         .hero-intro-text {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 900px;
-            text-align: center;
-            color: #000;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            padding: 20px;
-            box-sizing: border-box;
+    position: absolute;
+    top: 55%; /* Starts text around mid-to-lower chest area */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
         }
         .hero-headline {
             max-width: 900px;
@@ -204,10 +204,10 @@
             .testimonial-grid { grid-template-columns: 1fr; }
             body { font-size: 17px; }
             .hero-intro-text {
-                font-size: 1.1rem;
-                bottom: 10px;
-                padding: 15px;
-            }
+            top: 60%; /* Push text lower on mobile to avoid face */
+            font-size: 1.1rem;
+            padding: 15px;
+        }
             .hero-fade {
                 height: 60%;
             }
@@ -226,22 +226,16 @@
         <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
         <div class="hero-fade"></div>
         <div class="hero-intro-text">
-            Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.
+            <p><strong>If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+…</strong></p>
+            <p>and you're tired of working harder with no real breakthrough…</p>
         </div>
     </section>
 
     <div class="container">
         <h1 class="hero-headline">Scale Your Business to ₦1 Million Per Month in Just 30 Days<br><span>— And Win Your Money Back If You Do.</span></h1>
        
-        <div style="text-align:center; margin:60px 0;">
-            <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
-                Count Me In
-                <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
-            </a>
-        </div>
-       
         <p style="text-align:center; font-size:1.3rem; max-width:800px; margin:0 auto 60px;">
-            If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+… and you're tired of working harder with no real breakthrough…
+            The proven, battle-tested system that took me from multiple business crashes to consistent ₦2M+ months — now distilled into a 30-day challenge for serious owners ready to lock in their 2026 breakthrough.
         </p>
        
         <div class="bullets">
@@ -255,7 +249,14 @@
                 <li>The little-known reason most Nigerian businesses crash after their first big win — and how to make sure yours never does again…</li>
             </ul>
         </div>
-
+        
+        <div style="text-align:center; margin:60px 0;">
+            <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
+                Count Me In
+                <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
+            </a>
+        </div>
+        
         <!-- Story & Graph -->
         <section>
             <img src="https://www.rocketsource.com/wp-content/uploads/2018/02/s-curve-business-growth-1.jpg" alt="Revenue Plateau to ₦1M+ Breakthrough Graph" class="section-img">
@@ -345,14 +346,14 @@
         <!-- Scarcity, Guarantee, Final CTA -->
         <section>
             <p style="text-align:center; font-size:1.4rem;"><strong>Just ₦5,000 today.</strong></p>
-            <p style="text-align:center; font-size:1.2rem;">This small qualification fee ensures only serious, committed owners apply — fully credited or refunded.</p>
+            <p style="text-align:center; font-size:1.2rem;">This small qualification fee ensures only serious, committed business owners apply — and it either gets fully credited toward the full program if you’re accepted, or fully refunded within 24 hours if you’re not a fit.</p>
             <p style="text-align:center; color:var(--primary); font-weight:bold; font-size:1.3rem;">Only 30 spots available for the January 2026 cohort<br>Applications close when filled or December 31.</p>
 
             <div class="guarantee">
                 <h2>My “Win Your Investment Back” Guarantee</h2>
-                <p>I’m so confident this system works that I’ll give you a path to get every kobo back.</p>
-                <p><strong>PATH A: THE RESULTS PATH</strong><br>Hit ₦1,000,000 in any 30-day period within 90 days — full refund.</p>
-                <p><strong>PATH B: THE ACTION PATH</strong><br>Fully implement (attend all sessions, complete tasks, check-ins) — full refund, no questions.</p>
+                <p><strong>Here’s my bet on you:</strong> I’m so confident this system works that I’ll give you a path to get every kobo back.</p>
+                <p><strong>PATH A: THE RESULTS PATH</strong><br>Hit ₦1,000,000 in revenue in any 30-day period within 90 days of starting the challenge, submit your proof, and I will refund your full challenge fee.</p>
+                <p><strong>PATH B: THE ACTION PATH</strong><br>Fully implement the system (attend all training sessions, complete tasks, conduct check-ins) and I will refund your full challenge fee — regardless of your results.</p>
             </div>
 
             <div style="text-align:center; margin:80px 0;">
