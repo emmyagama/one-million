@@ -90,9 +90,7 @@
     line-height: 1.6;
     padding: 20px;
     box-sizing: border-box;
-    background: #fff; /* White background for the part that extends below */
-    border-radius: 12px 12px 0 0; /* Optional: subtle rounded top */
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Soft lift effect */
+    
         }
         .hero-headline {
             max-width: 900px;
@@ -137,12 +135,29 @@
             z-index: 1000;
             background: var(--primary);
             color: #fff;
-            padding: 14px 20px;
+            padding: 12px 20px; /* Slightly reduced padding for smaller button */
             font-weight: 700;
             text-align: center;
             box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
-            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
+        .sticky-cta span.cta-sub {
+            font-size: 1rem; /* Keeps subtext size as is */
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        .sticky-cta .main-cta-text {
+            font-size: 1.45rem; /* Even more control over main text size */
+            font-weight: 800;
+        }
+
+/* Specifically increase only the main text size */
+.sticky-cta {
+    font-size: 1.35rem; /* Larger "Count Me In" */
+}
         .note-box {
             background: #fffdf0;
             border-left: 6px solid var(--accent);
@@ -224,7 +239,8 @@
 <body>
     <!-- Sticky Floating CTA -->
     <a href="https://selar.co/18981179h9?ref=landing" class="sticky-cta">
-        Count Me In <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
+        <span class="main-cta-text">Count Me In</span>
+        <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
     </a>
 
     <!-- Hero Section with Fade to White + Black Text -->
