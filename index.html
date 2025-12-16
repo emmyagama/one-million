@@ -3,162 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scale to ₦1M/Month Challenge | Emmy Agama</title>
+    <title>₦1M/Month 30-Day Challenge | Emmy Agama</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #8B0000; /* Deep Maroon */
+            --accent: #FFD700; /* Gold */
+            --text: #333;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+        }
         body { 
             margin: 0; 
             font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            background: #fff; 
+            line-height: 1.7; 
+            color: var(--text); 
+            background: var(--bg); 
         }
         .container { 
-            max-width: 800px; 
+            max-width: 900px; 
             margin: 0 auto; 
-            padding: 20px; 
+            padding: 40px 20px; 
         }
         h1, h2, h3 { 
-            font-weight: 800; 
+            font-family: 'Playfair Display', serif; 
+            color: var(--primary); 
             line-height: 1.2; 
         }
-        ul { 
-            list-style: none; 
-            padding: 0; 
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; margin-top: 60px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 16px; position: relative; }
+        li::before { content: "✓"; color: var(--accent); font-weight: bold; position: absolute; left: -20px; }
+        img { max-width: 100%; height: auto; display: block; margin: 40px auto; border-radius: 12px; }
+        .hero-portrait {
+            max-width: 400px;
+            margin: 40px auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            border: 8px solid #fff;
         }
-        li { 
-            margin-bottom: 12px; 
-            position: relative; 
-            padding-left: 24px; 
-        }
-        li::before { 
-            content: "•"; 
-            color: #FFD700; 
-            font-weight: bold; 
-            position: absolute; 
-            left: 0; 
-        }
-        img { 
-            max-width: 100%; 
-            height: auto; 
-            display: block; 
-            margin: 30px auto; 
-        }
-        .hero { 
-            position: relative; 
-            text-align: center; 
-            color: #fff; 
-            margin-bottom: 40px; 
-        }
-        .hero img { 
-            width: 100%; 
-            margin: 0; 
-        }
-        .hero-overlay { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            width: 90%; 
-            max-width: 800px; 
-        }
-        .hero h1 { 
-            font-size: 2.2em; 
-            margin-bottom: 20px; 
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.7); 
-        }
+        .hero-intro { text-align: center; font-size: 1.1rem; margin-bottom: 40px; }
+        .hero-headline { text-align: center; margin: 40px 0; }
+        .bullets { max-width: 800px; margin: 0 auto; columns: 1; }
+        @media (min-width: 768px) { .bullets { columns: 2; column-gap: 60px; } }
         .cta-btn { 
             display: inline-block; 
-            background: #8B0000; 
+            background: var(--primary); 
             color: #fff; 
-            padding: 16px 32px; 
+            padding: 18px 40px; 
             border-radius: 8px; 
-            font-size: 1.2em; 
+            font-size: 1.3rem; 
             font-weight: 700; 
             text-decoration: none; 
-            box-shadow: 0 4px 15px rgba(139,0,0,0.4); 
+            box-shadow: 0 10px 30px rgba(139,0,0,0.3); 
             transition: all 0.3s; 
         }
-        .cta-btn:hover { 
-            background: #a00000; 
-            transform: translateY(-3px); 
-        }
-        .cta-btn.gold { 
-            background: #FFD700; 
-            color: #000; 
-        }
-        .cta-sub { 
-            font-size: 0.8em; 
-            display: block; 
-            margin-top: 8px; 
-        }
+        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(139,0,0,0.4); }
+        .cta-btn.accent { background: var(--accent); color: #000; }
+        .cta-sub { display: block; font-size: 0.9rem; margin-top: 8px; font-weight: normal; }
         .sticky-cta { 
             position: fixed; 
-            bottom: 20px; 
+            bottom: 30px; 
             left: 50%; 
             transform: translateX(-50%); 
             z-index: 1000; 
-            background: #8B0000; 
+            background: var(--primary); 
             color: #fff; 
-            padding: 14px 30px; 
+            padding: 16px 40px; 
             border-radius: 50px; 
             font-weight: 700; 
             text-align: center; 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
             max-width: 90%; 
-            width: 320px; 
-        }
-        .sticky-cta .cta-sub { 
-            font-size: 0.85em; 
+            width: 350px; 
         }
         .note-box { 
-            background: #f9f9f9; 
-            border-left: 5px solid #FFD700; 
-            padding: 20px; 
-            margin: 40px 0; 
-            font-style: italic; 
-        }
-        .testimonial { 
-            background: #f0f0f0; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin-bottom: 20px; 
-            font-style: italic; 
-        }
-        .testimonial cite { 
-            display: block; 
-            margin-top: 15px; 
-            font-weight: bold; 
-            font-style: normal; 
-        }
-        .guarantee { 
-            background: #fff9e6; 
+            background: linear-gradient(to right, var(--accent), #fff); 
             padding: 30px; 
-            border: 2px solid #FFD700; 
-            border-radius: 10px; 
-            margin: 40px 0; 
+            border-radius: 12px; 
+            margin: 60px 0; 
+            font-size: 1.1rem; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
         }
-        .disclaimer { 
-            font-size: 0.8em; 
-            text-align: center; 
-            color: #666; 
-            margin-top: 60px; 
-            padding: 20px; 
-            border-top: 1px solid #eee; 
+        .testimonial-grid {
+            display: grid;
+            gap: 30px;
+            margin: 60px 0;
         }
+        @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            font-style: italic;
+        }
+        .testimonial-card cite { display: block; margin-top: 20px; font-weight: bold; font-style: normal; color: var(--primary); }
+        .guarantee {
+            background: linear-gradient(to bottom, #fff, #fff9e6);
+            padding: 50px;
+            border-radius: 16px;
+            border: 3px solid var(--accent);
+            text-align: center;
+            margin: 80px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .value-highlight { font-size: 1.8rem; font-weight: bold; color: var(--primary); margin: 40px 0; text-align: center; }
+        .disclaimer { font-size: 0.85rem; text-align: center; color: #666; margin-top: 100px; padding: 30px; border-top: 1px solid #eee; }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8em; }
-            .container { padding: 15px; }
-            .sticky-cta { width: 90%; padding: 12px 20px; }
+            h1 { font-size: 2.2rem; }
+            .sticky-cta { padding: 14px 30px; font-size: 1.1rem; }
+            .testimonial-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <!-- Sticky Floating CTA -->
-    <a href="https://selar.com/18981179h9?ref=landing" class="sticky-cta">
+    <a href="https://selar.co/18981179h9?ref=landing" class="sticky-cta">
         Count Me In
         <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
     </a>
@@ -166,18 +133,35 @@
     <div class="container">
 
         <!-- Hero Section -->
-        <section class="hero">
-            <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur">
-            <div class="hero-overlay">
-                <p>Hey, it's Emmy Agama — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
-                <p>If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month…<br>but you know deep down you should be hitting ₦1 million+… and you're tired of working harder with no real breakthrough…</p>
-                <h1>Scale Your Business to ₦1 Million Per Month in Just 30 Days<br>— And Win Your Money Back If You Do.</h1>
-                <p>The proven, battle-tested system that took me from multiple business crashes to consistent ₦2M+ months — now distilled into a 30-day challenge for serious owners ready to lock in their 2026 breakthrough.</p>
+        <section>
+            <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama" class="hero-portrait">
+            
+            <div class="hero-intro">
+                <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months.</p>
+                <p>This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
+            </div>
+            
+            <h1 class="hero-headline">Scale Your Business to ₦1 Million Per Month in Just 30 Days<br><span style="color:var(--accent);">— And Win Your Money Back If You Do.</span></h1>
+            
+            <div style="text-align:center; margin:50px 0;">
+                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
+                    Count Me In
+                    <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
+                </a>
+            </div>
+            
+            <p style="text-align:center; font-size:1.1rem; max-width:700px; margin:0 auto 40px;">
+                If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+… and you're tired of working harder with no real breakthrough…
+            </p>
+            
+            <div class="bullets">
                 <ul>
                     <li>The hidden “profit leak” quietly stealing ₦300k+ from 90% of ₦500k/month businesses every single month…</li>
                     <li>Why pouring more money into ads is the fastest way to stay stuck (and the little-known 72-hour traffic fix that costs nothing)…</li>
                     <li>The exact 3-step closing sequence my clients use to turn “maybe” leads into high-ticket sales without sounding salesy…</li>
-                    <li>How to build an “owner-exit” system so your business makes money even when you’re on vacation (the secret most ₦700k owners never discover)…</li>
+                    <li>How to build an “owner-exit” system so your business makes money even when you’re on vacation (the secret most ₦700k owners never discover)…
+
+</li>
                     <li>The one diagnosis mistake that keeps good businesses plateaued for years — and how to fix it in Week 1…</li>
                     <li>Why “hustle harder” is killing your growth (and the leverage shift that added ₦800k/month for three of my clients)…</li>
                     <li>The little-known reason most Nigerian businesses crash after their first big win — and how to make sure yours never does again…</li>
@@ -185,22 +169,26 @@
             </div>
         </section>
 
-        <!-- Story Section -->
+        <!-- Story & Graph -->
         <section>
-            <img src="https://emmyagama.github.io/one-million/images/revenue%20plateau.webp" alt="Revenue Plateau to Breakthrough Graph">
+            <img src="https://econbrowser.com/wp-content/uploads/2023/04/gdpgdpplusfinsalespix1-2.png" alt="Revenue Plateau to ₦1M+ Breakthrough">
+            
             <p>Sound familiar?</p>
             <p>I’ve watched a ₦1.5M/month business crumble to ₦200k. I’ve built a ₦2M/month business that crashed to zero. I know exactly why you’re stuck — and more importantly, I know the exact system to get you unstuck, for good.</p>
             <p>My name is Emmy Agama, and I don’t teach theory. I teach the repeatable, systemized survival blueprint I had to learn the hard way.</p>
+            <!-- Full personal story continues here... -->
             <p>At 12 years old, I watched my mother’s business bring in ₦1.5 million every single month. By the time I was 16, that same business was barely scraping ₦200k. Life got busy. Chaos took over. The "magic" that built it couldn’t be replicated. There was no system — so when she couldn’t be everywhere at once, the business bled out.</p>
             <p>I thought I was smarter. I started failing at 12, 17, 18… until at 19 I broke through to ₦400k/month, and by 20 I was at ₦2 million monthly. I felt unstoppable.</p>
             <p>Then in 2021, it all crashed again — same pattern. Life intervened, the hustle couldn’t sustain, and I was back to zero.</p>
             <p>That’s when I got serious. I joined a top-tier consulting firm and surrounded myself with people who build scalable, owner-independent businesses.</p>
-            <p>My team and I have since worked directly with hundreds Nigerian business owners who were exactly where you are: stuck at ₦200k–₦800k, knowing they’re capable of more, but hitting the same invisible wall every month.</p>
+            <p>My team and I have since worked directly with hundreds of Nigerian business owners who were exactly where you are: stuck at ₦200k–₦800k, knowing they’re capable of more, but hitting the same invisible wall every month.</p>
             <p>Our job? Find the single biggest leak, implement the precise fix, and install the operating system so the growth becomes the new normal — not just a lucky spike.</p>
             <p>If the plateau feels comfortable but is slowly killing your freedom, your family time, and your bigger vision… keep reading.</p>
-            <p>You’re not lazy. You’re not unlucky. You just don’t have the full system yet.</p>
+            <p><strong>You’re not lazy. You’re not unlucky. You just don’t have the full system yet.</strong></p>
+            
             <h2>That’s why I created the ₦1M/Month 30-Day Challenge</h2>
             <p>It’s the exact protocol we use with private clients to rapidly diagnose leaks, flood the business with ideal buyers, convert at higher prices, and systemize for owner freedom — so you hit ₦1 million months that last.</p>
+            
             <p>Here’s what becoming a ₦1M/month business owner will do for you:</p>
             <ul>
                 <li>Finally break free from the monthly revenue rollercoaster and enjoy predictable, growing income</li>
@@ -211,28 +199,31 @@
             </ul>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials -->
         <section>
-            <!-- Placeholder for combined testimonial image -->
-            <img src="https://via.placeholder.com/800x1200?text=Testimonials+Image+(Stacked+Quotes)+Coming+Soon" alt="Client Testimonials">
-            <h2>Don’t just take my word for it…</h2>
-            <div class="testimonial">
-                <p>"I was 'comfortably stuck' at ₦450k for 9 months. I tried everything — more ads, new logos, even a website. Nothing moved the needle. After the Challenge, we identified my real problem: I was selling to everyone and converting no one. We fixed my messaging in Week 2. By Week 4, I had a waitlist. Last month, I did ₦1.3M. It wasn't about working harder. It was about finally working on the right thing."</p>
-                <cite>— Tunde A., Service Business Owner, Lagos</cite>
-            </div>
-            <div class="testimonial">
-                <p>"My business was me. If I slept, revenue stopped. I hit ₦700k once but was working 18-hour days. I joined the Challenge to buy my time back. The scaling systems in Week 3 changed everything. I created two simple SOPs and hired my first virtual assistant. Now my business runs without me micromanaging every detail. Last month, I hit ₦1.1M while on a 5-day vacation. That was the real win."</p>
-                <cite>— Chioma B., E-commerce Owner, Abuja</cite>
-            </div>
-            <div class="testimonial">
-                <p>"After a great start, my revenue was sliding backward from nearly ₦800k down to ₦300k. I was desperate. The audit in Week 1 showed me I was bleeding cash from two bad client contracts and inefficient ad spend. We plugged the leaks immediately and reallocated my budget. 30 days later, I was back at ₦950k and climbing with a clear, profitable plan. This didn't just save my business; it gave me my confidence back."</p>
-                <cite>— Emeka C., Agency Owner, Abuja</cite>
+            <h2 style="text-align:center;">Don’t just take my word for it…</h2>
+            <!-- Placeholder for premium stacked testimonial image -->
+            <img src="https://cdn.dribbble.com/userupload/18033480/file/original-06cc2626f1efd7d18feecffc04429471.jpg?format=webp&resize=1200x900" alt="Client Testimonials - Premium Design">
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"I was 'comfortably stuck' at ₦450k for 9 months... Last month, I did ₦1.3M. It wasn't about working harder. It was about finally working on the right thing."</p>
+                    <cite>— Tunde A., Service Business Owner, Lagos</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"My business was me. If I slept, revenue stopped... Last month, I hit ₦1.1M while on a 5-day vacation. That was the real win."</p>
+                    <cite>— Chioma B., E-commerce Owner, Abuja</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"After a great start, my revenue was sliding backward... 30 days later, I was back at ₦950k and climbing with a clear, profitable plan."</p>
+                    <cite>— Emeka C., Agency Owner, Abuja</cite>
+                </div>
             </div>
         </section>
 
         <!-- Offer Section -->
         <section>
-            <h2>Here’s exactly what you get when you secure your spot:</h2>
+            <h2 style="text-align:center;">Here’s exactly what you get when you secure your spot:</h2>
             <ul>
                 <li>Personalized 1-on-1 Kickoff Strategy Call — We audit your business together and build your custom ₦1M Workplan</li>
                 <li>4 Live Group Training & Q&A Sessions (weekly)</li>
@@ -241,18 +232,19 @@
                 <li>24/7 Private WhatsApp Accountability Community</li>
                 <li>Lifetime Access to All Recordings</li>
             </ul>
-            <p>Plus these fast-action bonuses:</p>
+            <p><strong>Plus these fast-action bonuses:</strong></p>
             <ul>
                 <li>Bonus 1: My Private High-Converting Ad Swipe File (₦47k value)</li>
                 <li>Bonus 2: 90-Day Post-Challenge Scaling Roadmap (₦37k value)</li>
                 <li>Bonus 3: Exclusive Vendor Rolodex for Tools & Services (₦27k value)</li>
             </ul>
-            <p><strong>Total real-world value: Over ₦450,000</strong></p>
-            <img src="https://emmyagama.github.io/one-million/images/revenue%20plateau.webp" alt="Value Stack Graphic">
+            <p class="value-highlight">Total real-world value: Over ₦450,000</p>
+            
+            <img src="https://entrepreneurshq.com/wp-content/uploads/2025/06/example-of-a-coaching-offer-breakdown-with-price-that-feels-aligned-to-total-program-value.jpg" alt="Value Stack Graphic">
             
             <!-- Mid-Page CTA -->
-            <div style="text-align:center; margin:40px 0;">
-                <a href="https://selar.com/18981179h9?ref=landing" class="cta-btn gold">
+            <div style="text-align:center; margin:60px 0;">
+                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
                     Count Me In
                     <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
                 </a>
@@ -264,47 +256,33 @@
             <p>"Hey, it's Emmy. Real quick — the ₦5,000 fee below is NOT the price of the challenge. It's a small qualification deposit to make sure only serious owners apply. If you're accepted, it's fully credited toward the program. If not, full refund in 24 hours. The real investment is revealed on our call — and our participants consistently report the challenge paying for itself within weeks. Keep reading — spots are limited."</p>
         </div>
 
-        <!-- Scarcity & Guarantee -->
+        <!-- Scarcity, Guarantee, Final CTA -->
         <section>
-            <p>Your investment to qualify and secure one of the limited spots?</p>
-            <p><strong>Just ₦5,000 today.</strong></p>
-            <p>This small qualification fee ensures only serious, committed owners apply — and it’s either:</p>
-            <ul>
-                <li>Fully credited toward the full program if you’re accepted, or</li>
-                <li>Fully refunded within 24 hours if you’re not a fit.</li>
-            </ul>
-            <p><strong>Only 30 spots available for the January 2026 cohort</strong><br>
-            Applications close when spots are filled or December 31 — whichever comes first. (Previous cohort sold out in 11 days.)</p>
+            <p style="text-align:center; font-size:1.2rem;"><strong>Just ₦5,000 today.</strong></p>
+            <p style="text-align:center;">This small qualification fee ensures only serious, committed owners apply — fully credited or refunded.</p>
+            <p style="text-align:center; color:var(--primary); font-weight:bold;">Only 30 spots available for the January 2026 cohort<br>Applications close when filled or December 31.</p>
 
             <div class="guarantee">
                 <h2>My “Win Your Investment Back” Guarantee</h2>
-                <p>Here’s my bet on you: I’m so confident this system works that I’ll give you a path to get every kobo back.</p>
-                <p><strong>Choose Your Path to Win:</strong></p>
-                <p><strong>PATH A: THE RESULTS PATH</strong><br>
-                Hit ₦1,000,000 in revenue in any 30-day period within 90 days of starting the challenge, submit your proof, and I will refund your full challenge fee.</p>
-                <p><strong>PATH B: THE ACTION PATH</strong><br>
-                Fully implement the system:<br>
-                1. Attend (or watch) all 4 weekly group trainings.<br>
-                2. Complete and submit your personalized daily tasks for 28+ days.<br>
-                3. Attend both of your scheduled 1-on-1 check-in calls.<br>
-                Do all three, submit your completion proof, and I will refund your full challenge fee—regardless of your results.</p>
+                <p>I’m so confident this system works that I’ll give you a path to get every kobo back.</p>
+                <p><strong>PATH A: THE RESULTS PATH</strong><br>Hit ₦1,000,000 in any 30-day period within 90 days — full refund.</p>
+                <p><strong>PATH B: THE ACTION PATH</strong><br>Fully implement (attend all sessions, complete tasks, check-ins) — full refund, no questions.</p>
             </div>
 
-            <!-- Final CTA -->
-            <div style="text-align:center; margin:50px 0;">
-                <a href="https://selar.com/18981179h9?ref=landing" class="cta-btn" style="font-size:1.5em; padding:20px 40px;">
+            <div style="text-align:center; margin:60px 0;">
+                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn" style="font-size:1.6rem; padding:24px 50px;">
                     Pay ₦5,000 Qualification Fee Now & Secure Your Application
                 </a>
             </div>
 
             <p style="text-align:center;">
-                <a href="https://wa.me/2347014946131?text=Hi%20Emmy,%20I%20have%20a%20question%20about%20the%20₦1M%20Challenge%20before%20applying." style="color:#8B0000; font-size:0.9em;">
+                <a href="https://wa.me/2347014946131?text=Hi%20Emmy,%20I%20have%20a%20question%20about%20the%20₦1M%20Challenge%20before%20applying." style="color:var(--primary);">
                     Still have questions? Message us on WhatsApp →
                 </a>
             </p>
 
-            <p style="text-align:center; margin-top:40px; font-style:italic;">
-                P.S. Spots are already filling fast — serious owners are applying daily. Don’t start 2026 still stuck wondering “what if”. Worst case: Full refund. Best case: ₦1M months and the freedom you deserve. Pay the ₦5,000 qualification fee now — the button is above.
+            <p style="text-align:center; font-style:italic; margin-top:60px;">
+                P.S. Spots are already filling fast — serious owners are applying daily. Don’t start 2026 still stuck wondering “what if”. Worst case: Full refund. Best case: ₦1M months and the freedom you deserve.
             </p>
             <p style="text-align:center; font-style:italic;">
                 P.P.S. This is not another motivational course. This is the system that saves businesses from the plateau trap. If you’re ready, secure your application before spots are gone.
@@ -315,21 +293,6 @@
         <div class="disclaimer">
             Individual results vary and depend on effort, market conditions, and implementation. We provide the system, tools, and coaching, but ultimate success is the responsibility of the participant.
         </div>
-
     </div>
-
-    <script>
-        // Optional: Hide sticky CTA on upward scroll (advanced feel)
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            let currentScroll = window.pageYOffset;
-            if (currentScroll <= 0) {
-                document.querySelector('.sticky-cta').style.opacity = '1';
-            } else if (currentScroll > lastScroll) {
-                document.querySelector('.sticky-cta').style.opacity = '0.95'; // always visible
-            }
-            lastScroll = currentScroll;
-        });
-    </script>
 </body>
 </html>
