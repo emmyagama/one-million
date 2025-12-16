@@ -22,7 +22,7 @@
             line-height: 1.8; 
             color: var(--text); 
             background: var(--bg); 
-            font-size: 18px; /* Increased base font size */
+            font-size: 18px; 
         }
         .container { 
             max-width: 900px; 
@@ -49,7 +49,7 @@
             left: -30px; 
             font-size: 1.4em;
         }
-        img { 
+        img.section-img { 
             max-width: 100%; 
             height: auto; 
             display: block; 
@@ -59,37 +59,46 @@
         }
         .hero-section {
             position: relative;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
+            overflow: hidden;
         }
         .hero-image {
             width: 100%;
             height: auto;
             display: block;
-            opacity: 0.95;
+        }
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 80%, #ffffff 100%);
+            pointer-events: none;
         }
         .hero-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 80px 20px 120px;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%);
+            padding: 100px 20px 80px;
             box-sizing: border-box;
+            color: #fff;
+            text-align: center;
         }
-        .hero-intro { 
-            font-size: 1.3rem; 
-            max-width: 800px; 
-            margin: 0 auto 40px; 
+        .hero-overlay p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
         .hero-headline { 
             max-width: 900px; 
-            margin: 0 auto 60px;
-            font-size: 2.8rem;
+            margin: 80px auto 60px;
+            text-align: center;
+            font-size: 3rem;
         }
-        .hero-headline span { color: var(--accent); }
+        .hero-headline span { color: var(--gold-text); }
         .bullets ul { 
             max-width: 900px; 
             margin: 0 auto; 
@@ -100,12 +109,13 @@
             h1 { font-size: 3.5rem; }
             body { font-size: 19px; }
             .hero-headline { font-size: 3.5rem; }
+            .hero-overlay p { font-size: 1.5rem; }
         }
         .cta-btn { 
             display: inline-block; 
             background: var(--primary); 
             color: #fff; 
-            padding: 14px 36px; /* Reduced padding to make button smaller */
+            padding: 14px 36px; 
             border-radius: 8px; 
             font-size: 1.4rem; 
             font-weight: 700; 
@@ -118,18 +128,18 @@
         .cta-sub { display: block; font-size: 1rem; margin-top: 10px; font-weight: 500; }
         .sticky-cta { 
             position: fixed; 
-            bottom: 0; /* No space below */
+            bottom: 0; 
             left: 0;
             right: 0;
             width: 100%;
             z-index: 1000; 
             background: var(--primary); 
             color: #fff; 
-            padding: 14px 20px; /* Smaller padding */
+            padding: 14px 20px; 
             font-weight: 700; 
             text-align: center; 
             box-shadow: 0 -10px 30px rgba(0,0,0,0.3); 
-            font-size: 1.1rem; /* Slightly smaller text */
+            font-size: 1.1rem;
         }
         .note-box { 
             background: #fffdf0; 
@@ -194,7 +204,7 @@
             .container { padding: 40px 15px; }
             .testimonial-grid { grid-template-columns: 1fr; }
             body { font-size: 17px; }
-            .hero-overlay { padding: 60px 15px 100px; }
+            .hero-overlay { padding: 80px 15px 60px; }
             .hero-headline { font-size: 2.4rem; }
         }
     </style>
@@ -206,28 +216,26 @@
         Count Me In <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
     </a>
 
-    <!-- Hero Section with Overlay -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
+        <div class="hero-gradient"></div>
         <div class="hero-overlay">
-            <div class="hero-intro">
-                <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months.</p>
-                <p>This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
-            </div>
-            
-            <h1 class="hero-headline">Scale Your Business to ₦1 Million Per Month in Just 30 Days<br><span>— And Win Your Money Back If You Do.</span></h1>
-            
-            <div style="margin:60px 0;">
-                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
-                    Count Me In
-                    <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
-                </a>
-            </div>
+            <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
         </div>
     </section>
 
     <div class="container">
 
+        <h1 class="hero-headline">Scale Your Business to ₦1 Million Per Month in Just 30 Days<br><span>— And Win Your Money Back If You Do.</span></h1>
+        
+        <div style="text-align:center; margin:60px 0;">
+            <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
+                Count Me In
+                <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
+            </a>
+        </div>
+        
         <p style="text-align:center; font-size:1.3rem; max-width:800px; margin:0 auto 60px;">
             If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+… and you're tired of working harder with no real breakthrough…
         </p>
@@ -246,7 +254,7 @@
 
         <!-- Story & Graph -->
         <section>
-            <img src="https://www.rocketsource.com/wp-content/uploads/2018/02/s-curve-business-growth-1.jpg" alt="Revenue Plateau to ₦1M+ Breakthrough Graph">
+            <img src="https://www.rocketsource.com/wp-content/uploads/2018/02/s-curve-business-growth-1.jpg" alt="Revenue Plateau to ₦1M+ Breakthrough Graph" class="section-img">
 
             <p>Sound familiar?</p>
             <p>I’ve watched a ₦1.5M/month business crumble to ₦200k. I’ve built a ₦2M/month business that crashed to zero. I know exactly why you’re stuck — and more importantly, I know the exact system to get you unstuck, for good.</p>
@@ -277,7 +285,7 @@
         <section>
             <h2 style="text-align:center;">Don’t just take my word for it…</h2>
             
-            <img src="https://entrepreneurshq.com/wp-content/uploads/2025/06/example-of-a-coaching-offer-breakdown-with-price-that-feels-aligned-to-total-program-value.jpg" alt="Premium Stacked Client Testimonials Design">
+            <img src="https://assets.justinmind.com/wp-content/uploads/2020/11/testimonial-design-segmenting.png" alt="Premium Stacked Client Testimonials Design" class="section-img">
 
             <div class="testimonial-grid">
                 <div class="testimonial-card">
@@ -314,7 +322,7 @@
             </ul>
             <p class="value-highlight">Total real-world value: Over ₦450,000</p>
             
-            <img src="https://entrepreneurshq.com/wp-content/uploads/2025/06/example-of-a-coaching-offer-breakdown-with-price-that-feels-aligned-to-total-program-value.jpg" alt="Premium Value Stack Graphic">
+            <img src="https://cdn.prod.website-files.com/60837e1271f01d7945e78cb8/68431fafd5e9ae96d5cca22a_value-pricing-sales-impact-chart.webp" alt="Premium Value Stack Graphic" class="section-img">
 
             <!-- Mid-Page CTA -->
             <div style="text-align:center; margin:80px 0;">
