@@ -58,34 +58,34 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
         }
         .hero-section {
-            position: relative;
-            margin-bottom: 60px;
-            overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+        }
         }
         .hero-image {
             width: 100%;
             height: auto;
             display: block;
         }
-        .hero-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 80%, #ffffff 100%);
-            pointer-events: none;
-        }
         .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 100px 20px 80px;
-            box-sizing: border-box;
-            color: #fff;
-            text-align: center;
-        }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2) 70%, transparent);
+    
+    }
         .hero-overlay p {
             font-size: 1.3rem;
             max-width: 900px;
@@ -199,13 +199,18 @@
             border-top: 1px solid #eee; 
         }
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .container { padding: 40px 15px; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            body { font-size: 17px; }
-            .hero-overlay { padding: 80px 15px 60px; }
-            .hero-headline { font-size: 2.4rem; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .container { padding: 40px 15px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    body { font-size: 17px; }
+    .hero-overlay { 
+        height: 40%; 
+        padding: 0 20px; 
+        font-size: 1.1rem; 
+    }
+    .hero-headline { font-size: 2.4rem; }
+    }
         }
     </style>
 </head>
@@ -217,13 +222,12 @@
     </a>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
-        <div class="hero-gradient"></div>
-        <div class="hero-overlay">
-            <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
-        </div>
-    </section>
+<section class="hero-section">
+    <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
+    <div class="hero-overlay">
+        <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
+    </div>
+</section>
 
     <div class="container">
 
