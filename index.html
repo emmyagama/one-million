@@ -59,10 +59,10 @@
         }
         .hero-section {
     position: relative;
-    overflow: hidden;
-    margin-bottom: 80px;
+    overflow: visible; /* Changed from hidden to visible */
+    margin-bottom: 120px; /* Increased to give room for overflowing text */
     background: #fff;
-        }
+}
         .hero-image {
     width: 100%;
     height: auto;
@@ -79,7 +79,7 @@
         }
         .hero-intro-text {
     position: absolute;
-    top: 55%; /* Starts text around mid-to-lower chest area */
+    top: 55%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -90,6 +90,9 @@
     line-height: 1.6;
     padding: 20px;
     box-sizing: border-box;
+    background: #fff; /* White background for the part that extends below */
+    border-radius: 12px 12px 0 0; /* Optional: subtle rounded top */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Soft lift effect */
         }
         .hero-headline {
             max-width: 900px;
@@ -210,6 +213,9 @@
         }
             .hero-fade {
                 height: 60%;
+            }
+            .hero-section { 
+        margin-bottom: 140px; /* Extra room on mobile for overflowing text */
             }
             .hero-headline { font-size: 2.4rem; }
         }
