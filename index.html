@@ -60,30 +60,36 @@
         .hero-section {
             position: relative;
             overflow: hidden;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            background: #fff;
         }
         .hero-image {
             width: 100%;
             height: auto;
             display: block;
         }
-        .hero-overlay {
+        .hero-fade {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 35%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 40px;
-            box-sizing: border-box;
-            color: #fff;
-            text-align: center;
-            font-size: 1.3rem;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4) 60%, transparent);
+            height: 50%;
+            background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
             pointer-events: none;
+        }
+        .hero-intro-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+            color: #000;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .hero-headline {
             max-width: 900px;
@@ -102,6 +108,7 @@
             h1 { font-size: 3.5rem; }
             body { font-size: 19px; }
             .hero-headline { font-size: 3.5rem; }
+            .hero-intro-text { font-size: 1.4rem; }
         }
         .cta-btn {
             display: inline-block;
@@ -196,10 +203,13 @@
             .container { padding: 40px 15px; }
             .testimonial-grid { grid-template-columns: 1fr; }
             body { font-size: 17px; }
-            .hero-overlay {
-                height: 40%;
-                padding: 0 20px;
+            .hero-intro-text {
                 font-size: 1.1rem;
+                bottom: 10px;
+                padding: 15px;
+            }
+            .hero-fade {
+                height: 60%;
             }
             .hero-headline { font-size: 2.4rem; }
         }
@@ -211,11 +221,12 @@
         Count Me In <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
     </a>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Fade to White + Black Text -->
     <section class="hero-section">
         <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
-        <div class="hero-overlay">
-            <p>Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.</p>
+        <div class="hero-fade"></div>
+        <div class="hero-intro-text">
+            Hey, it's <strong>Emmy Agama</strong> — the guy who's crashed businesses twice and rebuilt to consistent ₦2M+ months. This challenge is the exact system I wish I had when I was stuck at ₦500k/month wondering why nothing was moving.
         </div>
     </section>
 
@@ -230,7 +241,7 @@
         </div>
        
         <p style="text-align:center; font-size:1.3rem; max-width:800px; margin:0 auto 60px;">
-            The proven, battle-tested system that took me from multiple business crashes to consistent ₦2M+ months — now distilled into a 30-day challenge for serious owners ready to lock in their 2026 breakthrough.
+            If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+… and you're tired of working harder with no real breakthrough…
         </p>
        
         <div class="bullets">
