@@ -337,11 +337,11 @@
                 </div>
                 <div class="testimonial-card">
                     <p>"My business was me. If I slept, revenue stopped... Last month, I hit ₦1.1M while on a 5-day vacation. That was the real win."</p>
-                    <cite>— Chioma B., E-commerce Owner, Abuja</cite>
+                    <cite>— Chioma O., E-commerce Owner, Abuja</cite>
                 </div>
                 <div class="testimonial-card">
                     <p>"After a great start, my revenue was sliding backward... 30 days later, I was back at ₦950k and climbing with a clear, profitable plan."</p>
-                    <cite>— Emeka C., Agency Owner, Abuja</cite>
+                    <cite>— Emeka N., Agency Owner, Abuja</cite>
                 </div>
             </div>
         </section>
@@ -420,24 +420,33 @@
         </div>
     </div>
     <script>
-  // Hide sticky CTA initially
-  const stickyCta = document.querySelector('.sticky-cta');
-  const firstCta = document.querySelector('.first-main-cta'); // We'll add this class to the first big CTA button
+  document.addEventListener('DOMContentLoaded', () => {
+    const stickyCta = document.querySelector('.sticky-cta');
+    const firstCta = document.querySelector('.first-main-cta');
 
-  if (stickyCta && firstCta) {
-    stickyCta.style.transform = 'translateY(100%)';
-    stickyCta.style.transition = 'transform 0.4s ease-in-out';
+    if (stickyCta && firstCta) {
+      // Start hidden
+      stickyCta.style.transform = 'translateY(100%)';
+      stickyCta.style.transition = 'transform 0.4s ease-in-out';
 
-    const firstCtaBottom = firstCta.getBoundingClientRect().bottom + window.scrollY;
+      // Recalculate position after everything is loaded
+      const updatePosition = () => {
+        const firstCtaBottom = firstCta.getBoundingClientRect().bottom + window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > firstCtaBottom) {
+            stickyCta.style.transform = 'translateY(0)';
+          } else {
+            stickyCta.style.transform = 'translateY(100%)';
+          }
+        });
+      };
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > firstCtaBottom) {
-        stickyCta.style.transform = 'translateY(0)';
-      } else {
-        stickyCta.style.transform = 'translateY(100%)';
-      }
-    });
-  }
+      // Run once immediately, and again after full load (covers images/fonts)
+      updatePosition();
+      window.addEventListener('load', updatePosition);
+    }
+  });
 </script>
 </body>
 </html>
