@@ -466,11 +466,15 @@
   });
 </script>
     <script>
-  // Track all main CTAs
+  // Track all main CTAs with safe delay
   const ctas = document.querySelectorAll('.first-main-cta, .cta-btn, .sticky-cta');
   ctas.forEach(cta => {
-    cta.addEventListener('click', () => {
-      fbq('track', 'InitiateCheckout');
+    cta.addEventListener('click', function(e) {
+      e.preventDefault(); // stop instant navigation
+      fbq('track', 'InitiateCheckout'); // fire the pixel event
+      setTimeout(() => {
+        window.location.href = this.href; // navigate after 300ms
+      }, 300); // 300ms delay ensures the event fires
     });
   });
 </script>
