@@ -271,7 +271,7 @@
 </head>
 <body>
     <!-- Sticky Floating CTA -->
-    <a href="https://selar.co/18981179h9?ref=landing" class="sticky-cta">
+    <a href="https://selar.co/18981179h9?ref=landing" class="sticky-cta track-cta">
     <span class="main-cta-text">Ready for Your ₦1M Breakthrough?</span>
     <span class="cta-sub">Pay ₦5,000 & Secure Spot Now →</span>
 </a>
@@ -306,7 +306,7 @@
         </div>
         
         <div style="text-align:center; margin:60px 0;">
-            <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent first-main-cta">
+            <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent first-main-cta track-cta">
                 SECURE MY SPOT
                 <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
             </a>
@@ -386,7 +386,7 @@
 
             <!-- Mid-Page CTA -->
             <div style="text-align:center; margin:80px 0;">
-                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent">
+                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn accent track-cta">
                     YES, I WANT THIS!
                     <span class="cta-sub">Pay ₦5,000 & Apply Now</span>
                 </a>
@@ -412,7 +412,7 @@
             </div>
 
             <div style="text-align:center; margin:80px 0;">
-                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn" style="font-size:1.8rem; padding:20px 50px;">
+                <a href="https://selar.co/18981179h9?ref=landing" class="cta-btn track-cta" style="font-size:1.8rem; padding:20px 50px;">
                     Pay ₦5,000 Qualification Fee Now & Secure Your Application
                 </a>
             </div>
@@ -424,7 +424,7 @@
             </p>
 
             <p style="text-align:center; font-style:italic; margin-top:80px; font-size:1.2rem;">
-                P.S. Spots are already filling fast — serious owners are applying daily. Don’t start 2026 still stuck wondering “what if”. Worst case: Full refund. Best case: ₦1M months and the freedom you deserve.
+                P.S. Spots are already filling fast — serious owners are applying daily. Don’t start 2026 still stuck wondering “what if”. <strong>Worst case:</strong> Full refund. <strong>Best case:</strong> ₦1M months and the freedom you deserve.
             </p>
             <p style="text-align:center; font-style:italic; font-size:1.2rem;">
                 P.P.S. This is not another motivational course. This is the system that saves businesses from the plateau trap. If you’re ready, secure your application before spots are gone.
@@ -466,16 +466,16 @@
   });
 </script>
     <script>
-  // Track all main CTAs with safe delay
-  const ctas = document.querySelectorAll('.first-main-cta, .cta-btn, .sticky-cta');
-  ctas.forEach(cta => {
-    cta.addEventListener('click', function(e) {
-      e.preventDefault(); // stop instant navigation
-      fbq('track', 'InitiateCheckout'); // fire the pixel event
+  document.querySelectorAll('.track-cta').forEach(cta => {
+    cta.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      fbq('track', 'InitiateCheckout');
+
       setTimeout(() => {
-        window.location.href = this.href; // navigate after 300ms
-      }, 300); // 300ms delay ensures the event fires
-    });
+        window.location.href = this.href;
+      }, 300);
+    }, { once: true }); // prevents double-firing
   });
 </script>
 </body>
