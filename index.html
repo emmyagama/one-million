@@ -67,7 +67,12 @@
     width: 100%;
     height: auto;
     display: block;
-        }
+    filter: blur(5px);
+    transition: filter 0.7s ease-out;
+}
+.hero-image.loaded {
+    filter: blur(0);
+}
         .hero-fade {
     position: absolute;
     bottom: 0;
@@ -278,7 +283,7 @@
 
     <!-- Hero Section with Fade to White + Black Text -->
     <section class="hero-section">
-        <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image">
+        <img src="https://emmyagama.github.io/one-million/images/cut%20headshot%20(1).webp" alt="Emmy Agama - Confident Nigerian Entrepreneur" class="hero-image" fetchpriority="high" onload="this.classList.add('loaded')">
         <div class="hero-fade"></div>
         <div class="hero-intro-text">
             <p><strong>If you're a Nigerian business owner consistently making ₦300,000 – ₦800,000 per month… but you know deep down you should be hitting ₦1 million+…</strong></p>
